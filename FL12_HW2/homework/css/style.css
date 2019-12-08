@@ -1,4 +1,3 @@
-/*Task 1*/
 @media print {
     .tm-sidebar,
     #about,
@@ -32,7 +31,6 @@
     .blocks .tm-team-description-container {
         padding-top: 0;
     }
-
 
     section .tm-section-description {
         text-indent: 0;
@@ -76,13 +74,12 @@
         text-transform: uppercase;
     }
 }
-/*Task 2*/
+
 .tm-nav-item a[href]:hover {
     color: #ffffff;
     background-color: #87cefa;
 }
 
-/*Task 3*/
 .tm-banner {
     background: linear-gradient(to right, lightskyblue, burlywood);
 }
@@ -91,7 +88,6 @@
     background: white;
 }
 
-/*Task 4 and 5*/
 .tm-banner-text {
     text-shadow: 4px 5px 3px #000000, 0 0 0 #ffffff;
     animation: text 4s;
@@ -105,7 +101,6 @@
         transform: translateX(0px);
     }
 }
-/*Task 6*/
 
 section .tm-content-box .tm-section-title {
     text-align: center;
@@ -114,13 +109,11 @@ section .tm-content-box .tm-section-title {
     display: flex;
 }
 
-/*Task 7*/
 .box:hover:nth-child(odd) {
     background-color: #d3d3d3;
     color: #87cefa;
 }
 
-/*Task 8*/
 .heading {
     color: #87cefa;
 }
@@ -143,7 +136,7 @@ section .tm-content-box .tm-section-title {
     font-variant: small-caps;
     font-weight: bold;
 }
-/*Task 9*/
+
 .blocks .tm-section-title {
     text-align: left;
 }
