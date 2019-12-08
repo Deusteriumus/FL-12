@@ -135,6 +135,7 @@ section .tm-content-box .tm-section-title {
     font-size: 11px;
     font-variant: small-caps;
     font-weight: bold;
+    display: inline-block;
 }
 
 .blocks .tm-section-title {
