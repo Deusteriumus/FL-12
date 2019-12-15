@@ -1,0 +1,299 @@
+@mixin logoSize ($size, $padding-left, $padding-top) {
+	width: $size;
+	height: $size;
+	padding-left: $padding-left;
+	padding-top: $padding-top;
+}
+
+@mixin logoText ($margin, $padding-left, $padding-top, $font-family, $font-weight, $color) {
+	margin: $margin;
+	padding-left: $padding-left;
+	padding-top: $padding-top;
+	font-family: $font-family;
+	font-weight: $font-weight;
+	color: $color;
+}
+
+@mixin logoTextSpan ($display, $padding-left, $font-size, $font-family, $border-bottom) {
+	display: $display;
+	padding-left: $padding-left;
+	font-size: $font-size;
+	font-family: $font-family;
+	border-bottom: $border-bottom;
+}
+
+@mixin button ($width, $height, $background, $color-text, $border, $border-radius, $font-family, $font-size, $font-weight) {
+	width: $width;
+	height: $height;
+	background: $background;
+	color: $color-text;
+	border: $border;
+	border-radius: $border-radius;
+	font-family: $font-family;
+	font-size: $font-size;
+	font-weight: $font-weight;
+}
+
+
+@mixin selectedTextAfter ($position, $width, $height, $top, $left, $line-height, $background-color, $content: '', $z-index: -1) {
+	position: $position;
+	width: $width;
+	height: $height;
+	top: $top;
+	left: $left;
+	line-height: $line-height;
+	background-color: $background-color;
+	content: $content;
+	z-index: $z-index;
+}
+
+@mixin link ($color:#ffffff, $padding-left: 98px, $font-size: 13px, $font-family: $fontFamilyHind) {
+	color: $color;
+	padding-left: $padding-left;
+	font-size: $font-size;
+	font-family: $font-family;
+}
+
+$colors: (
+	white: #ffffff,
+	black: #000000,
+	subwhite: #c0c3ce
+);
+
+body {
+	background-color: $colorSection;
+}
+
+.header-wrap {
+	background: $background;
+	border-bottom-right-radius: 350px;
+	background-position: center;
+	margin: -8px;
+	margin-right: -140px;
+	padding-bottom: 117px;
+	padding-right: 500px;
+
+	.landing-logo {
+		display: flex;
+
+		img {
+			@include logoSize(30px, 128px, 12px);
+		}
+
+		p {
+			@include logoText (0px, 9px, 10px, $fontFamilyHind, 300, $colorTextLogo);
+
+			span {
+				@include logoTextSpan (block, 7px, 0.4em, $fontFamilyHind, 15px);
+				color: $colorTextLogo;
+			}
+		}
+	}
+
+	p.header_heading {
+		position: relative;
+		color: $colorTextHeader;
+		width: 350px;
+		line-height: 50px;
+		margin: 0;
+		padding-left: 132px;
+		padding-top: 48px;
+		font-size: 47px;
+		font-family: $fontFamilyHind;
+		font-weight: 900;
+		z-index: 1;
+
+		&:after {
+			@include selectedTextAfter(absolute, 202px, 36px, 108px, 128px, 17px, $colorText);
+		}
+	}
+
+	p.header_text {
+		position: relative;
+		color: $colorTextHeader;
+		width: 410px;
+		padding-left: 128px;
+		padding-top: 21px;
+		line-height: 17px;
+		font-size: 12px;
+		font-family: $fontFamilyHind;
+	}
+
+	.header_button {
+		@include button (95px, 34px, $colorButton, #ffffff, none, 2px, $fontFamilyHind, 12px, 600);
+		margin-left: 127px;
+		margin-top: 25px;
+	}
+
+	.login {
+		@include link(#ffffff, 98px, 13px, $fontFamilyHind);
+		padding-top: 2px;
+	}
+}
+
+.section {
+	p.section_text {
+		position: relative;
+		color: $colorSectionText;
+		font-family: $fontFamilyHind;
+		font-size: 27px;
+		margin-bottom: 0px;
+		margin-top: 8px;
+		padding-left: 491px;
+		padding-top: 5px;
+		z-index: 1;
+
+		&:before {
+			@include selectedTextAfter(absolute, 130px, 36px, 0px, 635px, 17px, $colorText);
+		}
+	}
+
+	.section_card_wrap {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 14px;
+		padding-left: 130px;
+
+		.section_card {
+			display: flex;
+			background: $colorSectionCard;
+			width: 743px;
+			height: 220px;
+			flex-direction: row;
+			align-items: center;
+			border-radius: 5px;
+			margin-bottom: 13px;
+
+			.section_card_img {
+				width: 51%;
+				border-radius: 5px;
+				margin-left: 11px;
+			}
+
+			.section_card_right_container {
+				width: 600px;
+				text-align: center;
+
+				.section_card_heading {
+					color: #ffffff;
+					font-weight: 600;
+					margin-top: 27px;
+					padding-left: 0px;
+				}
+
+				.section_card_text {
+					color: #c0c3ce;
+					line-height: 15px;
+					text-align: justify;
+					font-size: 11px;
+					font-family: $fontFamilyHind;
+					margin: 17px 80px 20px 60px;
+				}
+
+				.section_link {
+					@include link(#c0c3ce, 10px, 10px, $fontFamilyHind);
+				}
+			}
+		}
+	}
+
+	.section_banner {
+		position: relative;
+		color: $colorGradientText;
+		background: linear-gradient($linearGradient);
+		width: 799px;
+		height: 95px;
+		border-radius: 5px;
+		margin-left: 231px;
+		margin-top: 106px;
+
+
+		.section_banner_text_wrap {
+			display: inline-block;
+
+			.section_banner_heading {
+				position: relative;
+				font-family: $fontFamilyHind;
+				font-weight: bolder;
+				font-size: 20px;
+				margin-bottom: 0px;
+				padding-left: 110px;
+				z-index: 1;
+
+				&:after {
+					@include selectedTextAfter(absolute, 43px, 30px, 0px, 190px, 17px, $colorText);
+				}
+			}
+
+			.section_banner_text {
+				color: #acc3ce;
+				font-family: $fontFamilyHind;
+				font-size: 10px;
+				margin-top: 0px;
+				padding-left: 110px;
+			}
+		}
+
+		button {
+			@include button (95px, 34px, $colorButton, #ffffff, none, 2px, $fontFamilyHind, 12px, 600);
+			float: right;
+			margin: 30px 110px 0 0;
+		}
+	}
+}
+
+.footer {
+	display: flex;
+	position: absolute;
+	color: map-get($colors, subwhite);
+	background-color: $colorFooter;
+	width: 86%;
+	height: 64px;
+	top: 1400px;
+	margin-left: -8px;
+	padding-top: 90px;
+	padding-right: 100px;
+	padding-left: 192px;
+	z-index: -1;
+
+	.footer-wrap {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: space-between;
+		width: 100%;
+		height: 100%;
+		margin-left: -65px;
+		padding-right: 65px;
+
+		.landing-logo {
+			display: flex;
+			margin-bottom: 37px;
+
+			img {
+				@include logoSize(30px, 0px, 160px);
+			}
+
+			p {
+					@include logoText(0px, 10px, 157px, $fontFamilyHind, 300, #ffffff);
+
+				span {
+					@include logoTextSpan(block, 10px, 0.4em, $fontFamilyHind, 15px);
+				}
+			}
+		}
+
+		p.footer_text {
+			width: 200px;
+			font-size: 10px;
+			padding-left: 300px;
+			padding-bottom: 30px;
+		}
+
+		.footer-cr {
+			@extend p.footer_text;
+			margin-bottom: 30px;
+		}
+	}
+}
