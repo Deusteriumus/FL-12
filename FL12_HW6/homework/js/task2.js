@@ -5,8 +5,7 @@ console.log('b:' + b);
 let c = +prompt('Input the third side:', 0);
 console.log('c:' + c);
 
-if ( parseInt(a) !== a || parseInt(b) !== b || parseInt(c) !== c || typeof a === 'undefined' || typeof b === 'undefined'
-|| typeof c === 'undefined') {
+if ( parseInt(a) !== a || parseInt(b) !== b || parseInt(c) !== c) {
     alert('Input values should be ONLY numbers');
 } else if (a <= 0 || b <= 0 || c <= 0) {
     alert('A triangle must have 3 sides with a positive definite length');
