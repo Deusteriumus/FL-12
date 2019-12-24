@@ -7,7 +7,7 @@ console.log('c: ' + c);
 
 let D, X, X1, X2;
 
-if (parseInt(a) !== a || parseInt(b) !== b || parseInt(c) !== c) {
+if (parseInt(a) !== a || parseInt(b) !== b || parseInt(c) !== c || !a || !b || !c) {
     console.log('Invalid input data');
 } else {
     D = b*b - 4 * a * c;
