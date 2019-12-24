@@ -1,15 +1,16 @@
 let a = +prompt('Input a: ', 0);
-console.log('a: ' + a);
+console.log(`a: ${a}`);
 let b = +prompt('Imput b: ', 0);
-console.log('b: ' + b);
+console.log(`b: ${b}`);
 let c = +prompt('Input c: ', 0);
-console.log('c: ' + c);
+console.log(`c: ${c}`);
 
-let D, X, X1, X2;
 
 if (parseInt(a) !== a || parseInt(b) !== b || parseInt(c) !== c || !a || !b || !c) {
     console.log('Invalid input data');
 } else {
+    console.log(`${a}x^2 + ${b}x + ${c} = 0`);
+    let D, X, X1, X2 = 0;
     D = b*b - 4 * a * c;
 
     if (D < 0) {
@@ -18,8 +19,8 @@ if (parseInt(a) !== a || parseInt(b) !== b || parseInt(c) !== c || !a || !b || !
         X = -b / (2 * a);
         console.log(`So, discriminant is equal zero. x = ${Math.round(X)}`)
     } else {
-        X1 = -b * Math.sqrt(D) / (2 * a);
-        X2 = -b * Math.sqrt(D) / (2 * a); 
+        X1 = (-b + Math.sqrt(D)) / (2 * a);
+        X2 = (-b - Math.sqrt(D)) / (2 * a); 
         console.log(`Discriminant is more 0. So, x1: ${Math.round(X1)} and x2: ${Math.round(X2)}`);
     }
 }

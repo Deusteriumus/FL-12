@@ -1,9 +1,9 @@
 let a = +prompt('Input the first side: ', 0);
-console.log('a:' + a);
+console.log(`a: ${a}`);
 let b = +prompt('Input the second side:', 0);
-console.log('b:' + b);
+console.log(`b: ${b}`);
 let c = +prompt('Input the third side:', 0);
-console.log('c:' + c);
+console.log(`c: ${c}`);
 
 if ( parseInt(a) !== a || parseInt(b) !== b || parseInt(c) !== c) {
     alert('Input values should be ONLY numbers');
